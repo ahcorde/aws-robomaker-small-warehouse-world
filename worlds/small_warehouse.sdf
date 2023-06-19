@@ -1,7 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sdf version="1.6">
   <world name="default">
-    
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin
+      filename="ignition-gazebo-physics-system"
+      name="ignition::gazebo::systems::Physics">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-user-commands-system"
+      name="ignition::gazebo::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-scene-broadcaster-system"
+      name="ignition::gazebo::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-contact-system"
+      name="ignition::gazebo::systems::Contact">
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-sensors-system"
+      name="ignition::gazebo::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <plugin
+      filename="ignition-gazebo-imu-system"
+      name="ignition::gazebo::systems::Imu">
+    </plugin>
+
     <gravity>0 0 -9.8</gravity>
     <physics default="0" name="default_physics" type="ode">
       <max_step_size>0.001</max_step_size>
@@ -43,7 +72,7 @@
         </include>
         <pose frame="">4.73156 -4.827049 0 0 0 0</pose>
 	</model>
-        
+
     <model name="aws_robomaker_warehouse_ShelfE_01_003">
         <include>
             <uri>model://aws_robomaker_warehouse_ShelfE_01</uri>
@@ -99,7 +128,7 @@
         </include>
         <pose frame="">0.0 0.0 -0.090092 0 0 0</pose>
 	</model>
-       
+
     <model name="aws_robomaker_warehouse_Lamp_01_005">
         <include>
             <uri>model://aws_robomaker_warehouse_Lamp_01</uri>
@@ -197,7 +226,7 @@
         </include>
         <pose frame=''>-1.634682 -7.811813 -0.319559 0 0 0</pose>
 	</model>
-                                                 
+
     <model name='aws_robomaker_warehouse_TrashCanC_01_002'>
         <include>
             <uri>model://aws_robomaker_warehouse_TrashCanC_01</uri>
